@@ -21,3 +21,5 @@
 
 ## will create an images called reverse-proxy
 #``docker-compose up -d ``
+
+## Note : Password for VNC is secret
