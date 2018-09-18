@@ -22,3 +22,6 @@
 #``docker-compose up -d ``
 
 ## Note : Password for VNC is secret
+
+
+![qa environment input management 1](https://user-images.githubusercontent.com/20526165/45692904-2cee4c00-bb5c-11e8-9224-19e440cd7865.png)
