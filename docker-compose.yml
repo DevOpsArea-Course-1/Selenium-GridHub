@@ -59,8 +59,8 @@ services:
       - URL_HUB=http://selenium-hub:4444
       - URL_UI=http://project_node_js-1:7777
     volumes:
-      - ./admin-app-test-automation:/usr/src
-      - ./admin-app-test-automation/target/surefire-reports:/usr/src/target/surefire-reports/:rw
+      - ./qa-test:/usr/src
+      - ./qa-test/target/surefire-reports:/usr/src/target/surefire-reports/:rw
     healthcheck:
       test: ["CMD-SHELL", "[ -f /usr/src/target/surefire-reports/index.html ]"]
       interval: 3s
@@ -89,18 +89,18 @@ services:
     image: httpd:2.4
     restart: always
     ports:
-      - "7777:80"
+      - "9999:80"
 #   restart: always
-##    depends_on:
-##      maven:
-##        condition: service_healthy
+    depends_on:
+      - maven
+        #      condition: service_healthy
 ####| mail -s "leverton test" eng.mohamed.zeineldin@gmail.com
 #        interval: 30s
 #      timeout: 10s
 #        retries: 6
     volumes:
 #      - /mnt/bash-script/:/mnt:rw
-      - ./admin-app-test-automation/target/surefire-reports:/usr/local/apache2/htdocs:rw
+      - ./qa-test/target/surefire-reports:/usr/local/apache2/htdocs:rw
 #    entrypoint: /mnt/bash-script
 #    command:
 #    - docker-entrypoint.sh 
