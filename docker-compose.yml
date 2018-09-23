@@ -1,5 +1,10 @@
 version: "3"
 services:
+  java-testapp:     
+    build: ./Java-testapp 
+    ports:
+      - "8080:8080"  
+    container_name: Java-app
   node-js-1:
     build: ./Nodejs-express-testapp-1
     ports:
@@ -66,23 +71,12 @@ services:
       interval: 3s
       retries: 6
     container_name : maven
-    # depends_on:
-    #   core-webapp:
-    #     condition: service_healthy
-    #   uui:
-    #     condition: service_started
-#      - PATH=/usr/src/mymaveni
     links:
       - selenium-hub
       - node-js-1
       - node-js-2
     working_dir: /usr/src
     command : mvn test
-#    entrypoint: /usr/src/ mvn test
-# - /var/www/maven-project/admin-app-test-automation:/usr/src/mymaven
-#
-
-
 
   selenium-report:
     container_name: selenium-report
@@ -90,17 +84,7 @@ services:
     restart: always
     ports:
       - "9999:80"
-#   restart: always
     depends_on:
       - maven
-        #      condition: service_healthy
-####| mail -s "leverton test" eng.mohamed.zeineldin@gmail.com
-#        interval: 30s
-#      timeout: 10s
-#        retries: 6
     volumes:
-#      - /mnt/bash-script/:/mnt:rw
       - ./qa-test/target/surefire-reports:/usr/local/apache2/htdocs:rw
-#    entrypoint: /mnt/bash-script
-#    command:
-#    - docker-entrypoint.sh 
