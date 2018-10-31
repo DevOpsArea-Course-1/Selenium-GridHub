@@ -24,3 +24,12 @@
 
 
 ![qa environment input management 1](https://user-images.githubusercontent.com/20526165/45692904-2cee4c00-bb5c-11e8-9224-19e440cd7865.png)
+
+
+##Please note : if you have a windows node (eg: you want to check using microsoft Edge)
+
+#just downlaod selenium --> selenium-server-standalone-2.47.1.jar  "use any version "
+ and then connect this node to the selenium gridhub 
+
+#``java -jar selenium-server-standalone-2.47.1.jar -role node -hub http://<Selenium-Grid-IP>:4444/grid/register``
+
