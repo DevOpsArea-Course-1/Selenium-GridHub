@@ -62,7 +62,7 @@ services:
     restart: always
     environment:
       - HUB_URL=http://selenium-hub:4444
-      - URL_UI=http://project_node_js-1:7777
+      - TEST_URL=http://project_node_js-1:7777
     volumes:
       - ./qa-test:/usr/src
       - ./qa-test/target/surefire-reports:/usr/src/target/surefire-reports/:rw
