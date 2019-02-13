@@ -61,7 +61,7 @@ services:
     image: maven
     restart: always
     environment:
-      - URL_HUB=http://selenium-hub:4444
+      - HUB_URL=http://selenium-hub:4444
       - URL_UI=http://project_node_js-1:7777
     volumes:
       - ./qa-test:/usr/src
