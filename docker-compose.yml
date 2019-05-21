@@ -71,10 +71,6 @@ services:
       interval: 3s
       retries: 6
     container_name : maven
-#    links:
-#      - selenium-hub
-#      - node-js-1
-#      - node-js-2
     working_dir: /usr/src
     command : mvn test
 
