@@ -12,10 +12,9 @@
 
 
 
-#### Steps 
-#``cd reverse-proxy``
+#### build the reverse proxy docker image  
 
-#`` docker build -t reverse-proxy .``
+#``docker build -t reverse-proxy  reverse-proxy``
 
 ## will create an images called reverse-proxy
 #``docker-compose up -d ``
